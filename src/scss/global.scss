@@ -28,3 +28,7 @@ body {
   letter-spacing: 0.02em;
   background: $gray-100;
 }
+
+main {
+  min-height: calc(100vh - #{$navbar-height});
+}

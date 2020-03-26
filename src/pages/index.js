@@ -97,32 +97,34 @@ export default ({ data }) => {
       <div className="sidebar animated fadeInUp">
         <Container className="sidebar__container px-0">
           <div className="sidebar__wrapper shadow-sm">
-            <h1 className="h5" style={{ fontStyle: "italic" }}>
-              Patrick Huskey
-            </h1>
-            <div
-              className="h1 text-primary text-uppercase"
-              style={{ lineHeight: 1, textIndent: -2 }}
-            >
-              Passionate
-              <br />
-              <div className="rotating-messages">
-                <div className="invisible">Spacer</div>
-                {introMessages.map((message, i) => (
-                  <span key={i} className="rotating-messages__message">
-                    {message}
-                  </span>
-                ))}
+            <div className="sidebar__content animated">
+              <h1 className="h5" style={{ fontStyle: "italic" }}>
+                Patrick Huskey
+              </h1>
+              <div
+                className="h1 text-primary text-uppercase"
+                style={{ lineHeight: 1, textIndent: -2 }}
+              >
+                Passionate
+                <br />
+                <div className="rotating-messages">
+                  <div className="invisible">Spacer</div>
+                  {introMessages.map((message, i) => (
+                    <span key={i} className="rotating-messages__message">
+                      {message}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
-            <div className="mt-3">
-              Northwest Arkansas based
-              <br />
-              <span className="font-weight-bold">
-                Senior Full Stack Engineer
-              </span>
-              <br />
-              and technologist.
+              <div className="mt-3">
+                Northwest Arkansas based
+                <br />
+                <span className="font-weight-bold">
+                  Senior Full Stack Engineer
+                </span>
+                <br />
+                and technologist.
+              </div>
             </div>
           </div>
         </Container>
@@ -233,7 +235,10 @@ export default ({ data }) => {
             <h2 className="mb-4">Skills and Technologies</h2>
             <div className="skills d-flex flex-wrap justify-content-center">
               {data.skills.edges.map((skill, i) => {
-                const name = skill.node.name.replace(",", ".")
+                const name = skill.node.name
+                  .split("_")[1]
+                  .replace(",", ".")
+                  .replace("CSharp", "C#")
 
                 return (
                   <span
@@ -323,7 +328,7 @@ export const pageQuery = graphql`
     }
     skills: allFile(
       filter: { relativeDirectory: { eq: "skills" } }
-      sort: { fields: changeTime }
+      sort: { fields: name }
     ) {
       edges {
         node {

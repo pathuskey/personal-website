@@ -1,5 +1,11 @@
 @import "variables";
 
+.btn {
+  path {
+    fill: currentColor;
+  }
+}
+
 // Hamburger
 .hamburger {
   padding: $hamburger-padding-y $hamburger-padding-x;

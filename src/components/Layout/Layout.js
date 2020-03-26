@@ -9,7 +9,8 @@ const TemplateWrapper = ({
   metaTitle,
   metaDescription,
   metaKeywords,
-  children
+  children,
+  contentClass
 }) => {
   const title = metaTitle ? metaTitle : ""
   const data = useStaticQuery(graphql`
@@ -38,7 +39,7 @@ const TemplateWrapper = ({
 
       <Header />
 
-      <main>
+      <main className={contentClass}>
         <Container className="px-0">{children}</Container>
       </main>
 

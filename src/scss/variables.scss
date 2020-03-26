@@ -56,11 +56,11 @@ $sidebar-width: 40%;
 $sidebar-width-xl: 30%;
 
 // Navbar
-$navbar-mobile-height: 3.5rem; // height of navbar on mobile devices
-$navbar-desktop-height: $navbar-mobile-height; // height of navbar on desktop devices
+$navbar-height: 3.5rem; // height of navbar on mobile devices
+$navbar-height: $navbar-height; // height of navbar on desktop devices
 $navbar-expand-breakpoint: lg; // breakpoint name where navbar expands to desktop view
 $navbar-nav-mobile-height: calc(
-  100vh - #{$navbar-mobile-height}
+  100vh - #{$navbar-height}
 ); // height of the mobile navigation
 $navbar-nav-padding-x: 0; // horizontal padding for the navbar navigation
 $navbar-nav-padding-left: 0; // horizontal padding for the navbar navigation

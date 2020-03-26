@@ -3,7 +3,7 @@
 .navbar {
   flex-shrink: 0;
   width: 100%;
-  height: $navbar-mobile-height;
+  height: $navbar-height;
   transition: height 0.5s ease-in-out, background-color 0.5s ease-in-out;
   padding: 0;
   margin-right: auto;
@@ -16,7 +16,7 @@
   background-color: fade_out(darken($primary, 15%), 0.1);
 
   + .layout--body-offset {
-    margin-top: $navbar-mobile-height;
+    margin-top: $navbar-height;
   }
 
   &--active {
@@ -76,7 +76,7 @@
     height: $navbar-nav-mobile-height;
     min-height: $navbar-nav-mobile-height;
     max-width: 300px;
-    top: $navbar-mobile-height;
+    top: $navbar-height;
     left: 0;
     transition: left 0.25s ease-in-out;
     overflow: auto;
@@ -156,11 +156,11 @@
   }
 
   @include media-breakpoint-up($navbar-expand-breakpoint) {
-    height: $navbar-desktop-height;
+    height: $navbar-height;
     color: $white;
 
     + .layout--body-offset {
-      margin-top: $navbar-desktop-height;
+      margin-top: $navbar-height;
     }
 
     &-nav {
