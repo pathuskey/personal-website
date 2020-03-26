@@ -1,5 +1,5 @@
 const siteName = "Patrick Huskey"
-const siteUrl = "https://www.patrickhuskey.com"
+const siteUrl = "https://www.patrickhuskey.me"
 
 module.exports = {
   siteMetadata: {
@@ -37,10 +37,10 @@ module.exports = {
         name: siteName,
         short_name: "PatHuskey",
         start_url: "/",
-        background_color: "#d0112b",
+        background_color: "#424cd0",
         theme_color: "#ffffff",
         display: "standalone",
-        icon: "src/img/icon.png" // This path is relative to the root of the site.
+        icon: "src/img/icon.png"
       }
     },
     "gatsby-plugin-offline",
