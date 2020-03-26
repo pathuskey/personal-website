@@ -1,0 +1,36 @@
+@import "../../scss/variables";
+
+.waves {
+  height: 25%;
+  width: 100%;
+  position: absolute;
+  top: -18vw;
+  left: -7vw;
+  background: #015871;
+  opacity: 0.1;
+  transform: rotate(160deg);
+
+  &__wave {
+    background: url(../../img/wave.svg) repeat-x;
+    position: absolute;
+    top: -198px;
+    width: 6400px;
+    height: 198px;
+    animation: wave 10s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.75;
+
+    &:nth-of-type(2) {
+      top: -150px;
+      animation: wave 8s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
+        swell 7s ease -1.25s infinite;
+      opacity: 1;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    height: 30%;
+    top: -10vw;
+    left: -5vw;
+  }
+}

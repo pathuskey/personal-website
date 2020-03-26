@@ -1,0 +1,122 @@
+@import "../../scss/variables";
+
+.bubbles {
+  position: absolute;
+  right: -3rem;
+  top: 0;
+  opacity: 0.15;
+
+  &__bubble {
+    animation-name: float;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    position: relative;
+
+    &--1 {
+      --distance: -75px;
+      animation-duration: 8s;
+    }
+
+    &--2 {
+      --distance: -15px;
+      animation-duration: 5s;
+    }
+
+    &--3 {
+      --distance: 12px;
+      animation-duration: 5.5s;
+    }
+
+    &--4 {
+      --distance: -18px;
+      animation-duration: 5.75s;
+    }
+
+    &--5 {
+      --distance: 10px;
+      animation-duration: 4.25s;
+    }
+
+    &--6 {
+      --distance: -16px;
+      animation-duration: 6s;
+    }
+
+    &--7 {
+      --distance: 20px;
+      animation-duration: 6s;
+    }
+
+    &--8 {
+      --distance: 14px;
+      animation-duration: 4.5s;
+    }
+
+    &--9 {
+      --distance: -25px;
+      animation-duration: 5s;
+    }
+
+    &--10 {
+      --distance: -16px;
+      animation-duration: 5.75s;
+    }
+
+    &--11 {
+      --distance: 22px;
+      animation-duration: 7s;
+    }
+
+    &--12 {
+      --distance: -13px;
+      animation-duration: 6.25s;
+    }
+
+    &--13 {
+      --distance: -11px;
+      animation-duration: 5s;
+    }
+
+    &--14 {
+      --distance: -24px;
+      animation-duration: 9s;
+    }
+
+    &--15 {
+      --distance: 9px;
+      animation-duration: 3.5s;
+    }
+
+    &--16 {
+      --distance: -10px;
+      animation-duration: 6s;
+    }
+
+    &--17 {
+      --distance: 15px;
+      animation-duration: 5.5s;
+    }
+
+    &--18 {
+      --distance: 20px;
+      animation-duration: 6s;
+    }
+
+    &--19 {
+      --distance: -26px;
+      animation-duration: 8s;
+    }
+
+    &--20 {
+      --distance: 17px;
+      animation-duration: 7.5s;
+    }
+  }
+
+  &__spinner {
+    animation-duration: 10s;
+    transform-origin: 383.511px 74.5px;
+    animation-timing-function: linear;
+  }
+}

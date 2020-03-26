@@ -1,0 +1,258 @@
+@import "variables";
+
+.navbar {
+  flex-shrink: 0;
+  width: 100%;
+  height: $navbar-mobile-height;
+  transition: height 0.5s ease-in-out, background-color 0.5s ease-in-out;
+  padding: 0;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $zindex-fixed;
+  background-color: fade_out(darken($primary, 15%), 0.1);
+
+  + .layout--body-offset {
+    margin-top: $navbar-mobile-height;
+  }
+
+  &--active {
+    background-color: $black;
+  }
+
+  &-wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-nav {
+    padding-left: $navbar-nav-padding-left;
+    padding-right: $navbar-nav-padding-right;
+
+    .nav {
+      box-shadow: inset 0 5px 7px -7px $gray-500,
+        inset 0 -5px 7px -7px $gray-500;
+      padding: 0.5rem 0;
+
+      .nav-link {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+    }
+
+    &--secondary {
+      flex-direction: row;
+      align-items: center;
+
+      .nav-link {
+        color: $white;
+        padding: 0 0.75rem !important;
+      }
+
+      svg {
+        height: 1.75rem;
+
+        path {
+          fill: currentColor;
+        }
+      }
+    }
+  }
+
+  &-collapse {
+    background: fade_out(
+      $navbar-nav-mobile-bg-color,
+      $navbar-nav-mobile-opacity
+    );
+    position: absolute;
+    width: 100%;
+    height: $navbar-nav-mobile-height;
+    min-height: $navbar-nav-mobile-height;
+    max-width: 300px;
+    top: $navbar-mobile-height;
+    left: 0;
+    transition: left 0.25s ease-in-out;
+    overflow: auto;
+    justify-content: flex-start;
+
+    &:not(.show) {
+      display: block;
+      left: -100%;
+    }
+
+    &.show {
+      box-shadow: 0 4999px 0 4999px rgba(0, 0, 0, 0.5);
+
+      .nav-link {
+        animation-name: scaleIn;
+        animation-duration: 250ms;
+        animation-delay: calc((var(--index) * 75ms) + 125ms);
+        animation-fill-mode: both;
+        animation-timing-function: ease-in-out;
+        transform-origin: 0 0;
+      }
+    }
+
+    &.collapsing {
+      height: auto;
+      display: block;
+      overflow: auto;
+    }
+
+    .nav-item {
+      position: relative;
+      border-bottom: 1px #c2c2c2 solid;
+    }
+
+    .nav-link {
+      color: $dark;
+      position: relative;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        background-color: fade-out($primary, 0.9);
+      }
+
+      &--active {
+        background-color: fade-out($primary, 0.9);
+        color: $secondary;
+
+        &:before {
+          width: 4px;
+          background-color: $secondary;
+          height: 100%;
+          left: 0;
+          top: 0;
+          position: absolute;
+          content: "";
+        }
+      }
+
+      &__icon {
+        svg {
+          path {
+            fill: currentColor;
+          }
+        }
+      }
+    }
+  }
+
+  .container {
+    height: 100%;
+  }
+
+  .nav-link {
+    padding: $navbar-nav-link-padding-y $navbar-nav-link-padding-x;
+  }
+
+  @include media-breakpoint-up($navbar-expand-breakpoint) {
+    height: $navbar-desktop-height;
+    color: $white;
+
+    + .layout--body-offset {
+      margin-top: $navbar-desktop-height;
+    }
+
+    &-nav {
+      height: 100%;
+
+      &--secondary {
+        padding-right: 0;
+        align-items: center;
+
+        .nav-link {
+          &:hover {
+            color: lighten($secondary, 15%);
+          }
+        }
+      }
+    }
+
+    .nav-item {
+      border-bottom: none;
+      display: flex;
+      align-items: center;
+      height: 100%;
+
+      &.is-active {
+        .nav-link:after {
+          display: none;
+        }
+      }
+    }
+
+    .nav-link {
+      padding: 0 $navbar-nav-link-padding-x;
+      height: 100%;
+      border: none;
+      text-align: left;
+      position: relative;
+      display: flex;
+      align-items: center;
+      font-size: $font-size-sm;
+      transition: all 0.15s ease-in-out;
+    }
+
+    &-collapse {
+      background: transparent;
+      position: relative;
+      right: auto !important;
+      top: auto;
+      width: auto;
+      max-width: none;
+      height: 100%;
+      min-height: 0;
+      box-shadow: none;
+      overflow: visible;
+      padding-top: 0;
+
+      &:not(.show) {
+        max-width: none;
+        right: -100%;
+        left: auto;
+      }
+
+      .nav-link {
+        color: $white;
+        cursor: pointer;
+        height: 100%;
+
+        &--active,
+        &:hover {
+          color: $secondary;
+        }
+
+        &--active {
+          cursor: default;
+          background: $white !important;
+
+          &:before {
+            display: none;
+          }
+        }
+
+        &:hover {
+          background: $light-200;
+        }
+      }
+
+      &.show {
+        box-shadow: none;
+
+        .nav-link {
+          animation: none;
+        }
+      }
+    }
+  }
+}

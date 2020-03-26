@@ -1,0 +1,92 @@
+// Custom Variables
+$font-family-regular: "Oswald", Helvetica, Arial, sans-serif;
+
+// Variable Overrides
+$primary: #424cd0;
+$secondary: #f15c56;
+$dark: #333;
+$light-300: #d9d9d9;
+$light-200: #efefef;
+$light-100: #f0f0f0;
+
+$font-family-sans-serif: $font-family-regular;
+$font-size-base: 1rem;
+$font-size-lg: ($font-size-base * 1.166667);
+$font-size-sm: ($font-size-base * 0.888888);
+
+$headings-line-height: 1.5;
+$headings-font-weight: 400;
+
+$h1-font-size: $font-size-base * 3.444444;
+$h2-font-size: $font-size-base * 3;
+$h3-font-size: $font-size-base * 2.5;
+$h4-font-size: $font-size-base * 2;
+$h5-font-size: $font-size-base * 1.333333;
+
+$display1-size: 7rem;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1600px
+);
+
+$container-max-widths: (
+  xxl: 1600px
+);
+
+$enable-responsive-font-sizes: true;
+
+// Tyson Components Includes
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+$theme-colors: map-merge(
+  (
+    lighter: $light-100
+  ),
+  $theme-colors
+);
+
+$sidebar-width: 40%;
+$sidebar-width-xl: 30%;
+
+// Navbar
+$navbar-mobile-height: 3.5rem; // height of navbar on mobile devices
+$navbar-desktop-height: $navbar-mobile-height; // height of navbar on desktop devices
+$navbar-expand-breakpoint: lg; // breakpoint name where navbar expands to desktop view
+$navbar-nav-mobile-height: calc(
+  100vh - #{$navbar-mobile-height}
+); // height of the mobile navigation
+$navbar-nav-padding-x: 0; // horizontal padding for the navbar navigation
+$navbar-nav-padding-left: 0; // horizontal padding for the navbar navigation
+$navbar-nav-padding-right: 0; // horizontal padding for the navbar navigation
+$navbar-nav-item-margin-left: 0; //  left margin for the navbar links
+$navbar-nav-item-margin-right: 0; // right margin for the navbar links
+$navbar-nav-mobile-bg-color: $light-200; // background color of mobile navigation
+$navbar-nav-mobile-opacity: 0.05; // opacity reduction of mobile navigation
+$navbar-nav-link-padding-y: 1.5rem; // vertical padding for the navbar links
+$navbar-nav-link-padding-x: 1.5rem; // horizontal padding for the navbar links
+$navbar-nav-link-color: $primary; // color of navbar links
+$navbar-nav-link-font-size: 1rem;
+
+// Hamburger button
+$hamburger-padding-x: 0; // horizontal padding for hamburger button
+$hamburger-padding-y: 0; // vertical padding for hamburger button
+$hamburger-layer-width: 30px; // width of hamburger button
+$hamburger-layer-height: 2px; // height of hamburger lines
+$hamburger-layer-spacing: 7px; // space between hamburger lines
+$hamburger-layer-color: $white; // color of hamburger lines
+$hamburger-layer-border-radius: 2px; // border-radius of hamburger lines
+$hamburger-hover-opacity: 1; // opacity of hamburger on hover
+$hamburger-hover-transition-duration: 0.15s; // transition duration on hover of hamburger
+$hamburger-hover-transition-timing-function: linear; // transition function on hover of hamburger
+
+//background variables
+$background-soft-grey: #f8f9fa;
+
+$text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
