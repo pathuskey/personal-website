@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Link as ScrollLink } from "react-scroll"
 import { Link as GatsbyLink } from "gatsby"
 import { Navbar, Nav, NavItem, Container, Collapse } from "reactstrap"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const navItems = [
   {
@@ -128,10 +129,10 @@ export default () => {
 
         <Nav className="navbar-nav--secondary ml-auto" navbar>
           <NavItem>
-            <a
+            <OutboundLink
               className="nav-link"
               href="https://www.linkedin.com/in/patrick-huskey"
-              title="LinkedIn"
+              title="My LinkedIn"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -151,13 +152,13 @@ export default () => {
                   <path d="M82.479,0 L64.583,0 C63.727,0 63,0.677 63,1.511 L63,19.488 C63,20.323 63.477,21 64.333,21 L82.229,21 C83.086,21 84,20.323 84,19.488 L84,1.511 C84,0.677 83.336,0 82.479,0 Z M71,8 L73.827,8 L73.827,9.441 L73.858,9.441 C74.289,8.664 75.562,7.875 77.136,7.875 C80.157,7.875 81,9.479 81,12.45 L81,18 L78,18 L78,12.997 C78,11.667 77.469,10.5 76.227,10.5 C74.719,10.5 74,11.521 74,13.197 L74,18 L71,18 L71,8 Z M66,18 L69,18 L69,8 L66,8 L66,18 Z M69.375,4.5 C69.375,5.536 68.536,6.375 67.5,6.375 C66.464,6.375 65.625,5.536 65.625,4.5 C65.625,3.464 66.464,2.625 67.5,2.625 C68.536,2.625 69.375,3.464 69.375,4.5 Z"></path>
                 </g>
               </svg>
-            </a>
+            </OutboundLink>
           </NavItem>
           <NavItem>
-            <a
+            <OutboundLink
               className="nav-link"
               href="https://github.com/pathuskey"
-              title="GitHub"
+              title="My GitHub"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -173,7 +174,7 @@ export default () => {
                   d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
                 ></path>
               </svg>
-            </a>
+            </OutboundLink>
           </NavItem>
         </Nav>
       </Container>

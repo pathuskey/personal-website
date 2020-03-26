@@ -64,6 +64,12 @@ module.exports = {
       options: {
         policy: [{ userAgent: "*", allow: "/" }]
       }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.GA_TRACKING_ID
+      }
     }
   ]
 }
