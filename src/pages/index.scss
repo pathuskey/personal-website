@@ -91,14 +91,14 @@
 
 .content {
   @include media-breakpoint-up(lg) {
-    width: calc(100% - $sidebar-width);
+    width: calc(100% - #{$sidebar-width});
     margin-left: $sidebar-width;
     position: relative;
     z-index: 2;
   }
 
   @include media-breakpoint-up(xl) {
-    width: calc(100% - $sidebar-width-xl);
+    width: calc(100% - #{$sidebar-width-xl});
     margin-left: $sidebar-width-xl;
   }
 }
