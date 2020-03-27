@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Link as ScrollLink } from "react-scroll"
 import { Link as GatsbyLink } from "gatsby"
 import { Navbar, Nav, NavItem, Container, Collapse } from "reactstrap"
-import { OutboundLink } from "gatsby-plugin-google-analytics"
+import { OutboundLink, trackCustomEvent } from "gatsby-plugin-google-analytics"
 
 const navItems = [
   {
@@ -64,6 +64,14 @@ export default () => {
     setOpen(!isOpen)
   }
 
+  const trackNavClick = name => {
+    trackCustomEvent({
+      category: "Nav Link",
+      action: "Click",
+      label: name
+    })
+  }
+
   return (
     <Navbar
       id="navigation"
@@ -93,7 +101,10 @@ export default () => {
                       to={navItem.title.toLowerCase()}
                       offset={-64}
                       style={{ "--index": i }}
-                      onClick={toggle}
+                      onClick={() => {
+                        toggle()
+                        trackNavClick(navItem.title)
+                      }}
                     >
                       {linkContent}
                     </ScrollLink>
@@ -102,6 +113,7 @@ export default () => {
                       className="nav-link"
                       to={navItem.url}
                       style={{ "--index": i }}
+                      onClick={trackNavClick(navItem.title)}
                     >
                       {linkContent}
                     </GatsbyLink>
