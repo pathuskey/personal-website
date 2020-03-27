@@ -113,7 +113,9 @@ export default () => {
                       className="nav-link"
                       to={navItem.url}
                       style={{ "--index": i }}
-                      onClick={trackNavClick(navItem.title)}
+                      onClick={() => {
+                        trackNavClick(navItem.title)
+                      }}
                     >
                       {linkContent}
                     </GatsbyLink>
