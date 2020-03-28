@@ -136,7 +136,7 @@ export default () => {
                     onSubmit={handleSubmit}
                     name="contact"
                     data-netlify="true"
-                    netlify-honeypot="last-name"
+                    netlify-honeypot="lastName"
                   >
                     <div className="position-relative">
                       <FormGroup>
