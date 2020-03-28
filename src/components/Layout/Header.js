@@ -143,7 +143,7 @@ export default () => {
 
         <button
           className={
-            "btn btn-none hamburger hamburger--spin navbar-toggler " +
+            "hamburger hamburger--spin navbar-toggler " +
             (isOpen ? "is-active" : "")
           }
           onClick={toggle}
