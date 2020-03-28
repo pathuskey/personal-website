@@ -1,3 +1,15 @@
 @import "../scss/variables";
 @import "~bootstrap/scss/forms";
 @import "~bootstrap/scss/input-group";
+
+.contact-form {
+  &__last-name {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 0;
+    z-index: -1;
+  }
+}

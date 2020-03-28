@@ -154,13 +154,16 @@ export default () => {
                         <Error touched={touched.name} message={errors.name} />
                       </FormGroup>
 
-                      <FormGroup>
-                        <Label for="lastName">Last Name</Label>
+                      <FormGroup className="contact-form__last-name">
+                        <Label for="lastName">
+                          If you are human, leave this field empty
+                        </Label>
                         <Input
                           type="text"
                           name="lastName"
                           id="lastName"
                           maxLength="50"
+                          tabIndex={-1}
                           onChange={handleChange}
                           value={values.lastName}
                         />
