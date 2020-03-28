@@ -39,6 +39,7 @@ $container-max-widths: (
 );
 
 $enable-responsive-font-sizes: true;
+$enable-validation-icons: false;
 
 // Tyson Components Includes
 @import "~bootstrap/scss/functions";
@@ -54,6 +55,8 @@ $theme-colors: map-merge(
 
 $sidebar-width: 40%;
 $sidebar-width-xl: 30%;
+
+$bio-section-min-height: 550px;
 
 // Navbar
 $navbar-height: 3.5rem; // height of navbar on mobile devices

@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/Layout/Layout"
 import Bubbles from "../components/Graphics/Bubbles"
 import Waves from "../components/Graphics/Waves"
@@ -11,7 +11,8 @@ import {
   CardColumns,
   Card,
   CardImg,
-  CardFooter
+  CardFooter,
+  Button
 } from "reactstrap"
 import ScrollAnimation from "react-animate-on-scroll"
 import { scroller } from "react-scroll"
@@ -125,12 +126,25 @@ export default ({ data }) => {
                 <br />
                 and technologist.
               </div>
+
+              <Button tag={Link} to="/contact" className="mt-4" size="lg">
+                Contact Me{" "}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <path d="M0 0h24v24H0V0z" style={{ fill: "none" }} />
+                  <path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z" />
+                </svg>
+              </Button>
             </div>
           </div>
         </Container>
       </div>
       <div className="content position-relative">
-        <section id="family">
+        <section id="bio">
           <Img
             fluid={data.family.childImageSharp.fluid}
             alt="Family"
