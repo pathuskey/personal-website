@@ -6,6 +6,21 @@ import { OutboundLink, trackCustomEvent } from "gatsby-plugin-google-analytics"
 
 const navItems = [
   {
+    title: "Bio",
+    url: "/#bio",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="24"
+        viewBox="0 0 24 24"
+        width="24"
+      >
+        <path d="M0 0h24v24H0V0z" style={{ fill: "none" }} />
+        <path d="M12 6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2m0 10c2.7 0 5.8 1.29 6 2H6c.23-.72 3.31-2 6-2m0-12C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 10c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+      </svg>
+    )
+  },
+  {
     title: "About",
     url: "/#about",
     icon: (
@@ -15,7 +30,7 @@ const navItems = [
         viewBox="0 0 24 24"
         width="24"
       >
-        <path d="M0 0h24v24H0V0z" style={{ fill: "transparent" }} />
+        <path d="M0 0h24v24H0V0z" style={{ fill: "none" }} />
         <path d="M15 4v7H5.17l-.59.59-.58.58V4h11m1-2H3c-.55 0-1 .45-1 1v14l4-4h10c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm5 4h-2v9H6v2c0 .55.45 1 1 1h11l4 4V7c0-.55-.45-1-1-1z" />
       </svg>
     )
@@ -30,7 +45,7 @@ const navItems = [
         viewBox="0 0 24 24"
         width="24"
       >
-        <path d="M0 0h24v24H0V0z" style={{ fill: "transparent" }} />
+        <path d="M0 0h24v24H0V0z" style={{ fill: "none" }} />
         <path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12zM10 9h8v2h-8zm0 3h4v2h-4zm0-6h8v2h-8z" />
       </svg>
     )
@@ -45,7 +60,7 @@ const navItems = [
         viewBox="0 0 24 24"
         width="24"
       >
-        <path d="M0 0h24v24H0V0z" style={{ fill: "transparent" }} />
+        <path d="M0 0h24v24H0V0z" style={{ fill: "none" }} />
         <path d="M4 6h18V4H2v13H0v3h14v-3H4V6zm20 2h-8v12h8V8zm-2 9h-4v-7h4v7z" />
       </svg>
     )

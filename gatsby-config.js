@@ -10,7 +10,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-162015533-1"
+        trackingId: process.env.GA_TRACKING_ID
       }
     },
     "gatsby-plugin-react-helmet",
@@ -71,7 +71,7 @@ module.exports = {
         policy: [{ userAgent: "*", allow: "/" }]
       }
     },
-
+    "gatsby-plugin-netlify",
     "gatsby-plugin-netlify-cache"
   ]
 }
