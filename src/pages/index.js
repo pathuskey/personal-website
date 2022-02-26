@@ -23,6 +23,11 @@ export default ({ data }) => {
   const introMessages = ["Husband", "Father", "Learner", "Engineer"]
   const projects = [
     {
+      title: "publix.com",
+      url: "https://www.publix.com",
+      image: data.publix.childImageSharp.fluid
+    },    
+    {
       title: "tyson.com",
       url: "https://www.tyson.com",
       image: data.tyson.childImageSharp.fluid
@@ -36,6 +41,11 @@ export default ({ data }) => {
       title: "aidells.com",
       url: "https://www.aidells.com",
       image: data.aidells.childImageSharp.fluid
+    },
+    {
+      title: "walmart.com",
+      url: "https://www.walmart.com",
+      image: data.walmart.childImageSharp.fluid
     },
     {
       title: "jimmydean.com",
@@ -87,7 +97,7 @@ export default ({ data }) => {
   return (
     <Layout
       metaTitle="Patrick Huskey"
-      metaDescription="I am a Senior Full Stack Engineer with 9+ years
+      metaDescription="I am a Senior Full Stack Engineer with 11+ years
         experience working with various web technologies and cloud infrastructure.
         I have solid experience with a wide array of technologies such as Html5,
         CSS3, Javascript, SCSS, jQuery, React, Gatsby, Bootstrap, ASP.NET, C#,
@@ -188,9 +198,9 @@ export default ({ data }) => {
               <Col style={{ minWidth: 300 }}>
                 <h2>About Me</h2>
                 <p>
-                  I have 9+ years experience as a full stack engineer for a
-                  Fortune 100 company primarily focused on branded marketing and
-                  corporate websites. I love engaging with new technologies,
+                  I have 11+ years experience as a full stack engineer working with
+                  multiple Fortune 100 companies and primarily focused on branded 
+                  marketing and corporate websites. I love engaging with new technologies,
                   solving difficult problems, creating beautiful user
                   experiences, and working with other talented engineers.
                 </p>
@@ -338,6 +348,12 @@ export const pageQuery = graphql`
       ...PortfolioImage
     }
     wrightbrand: file(relativePath: { eq: "portfolio/WrightBrand.jpg" }) {
+      ...PortfolioImage
+    }
+    walmart: file(relativePath: { eq: "portfolio/Walmart.jpg" }) {
+      ...PortfolioImage
+    }
+    publix: file(relativePath: { eq: "portfolio/Publix.jpg" }) {
       ...PortfolioImage
     }
     skills: allFile(

@@ -7,12 +7,6 @@ module.exports = {
     siteUrl: siteUrl
   },
   plugins: [
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: process.env.GA_TRACKING_ID
-      }
-    },
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sass",
     "gatsby-plugin-sitemap",
@@ -71,7 +65,6 @@ module.exports = {
         policy: [{ userAgent: "*", allow: "/" }]
       }
     },
-    "gatsby-plugin-netlify",
-    "gatsby-plugin-netlify-cache"
+    "gatsby-plugin-netlify"
   ]
 }
