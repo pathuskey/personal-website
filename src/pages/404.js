@@ -3,7 +3,7 @@ import Layout from "../components/Layout/Layout"
 import { Link } from "gatsby"
 import { Button } from "reactstrap"
 
-export default () => {
+const PageNotFound = () => {
   return (
     <Layout
       metaTitle="Page Not Found"
@@ -30,3 +30,5 @@ export default () => {
     </Layout>
   )
 }
+
+export default PageNotFound

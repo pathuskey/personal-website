@@ -67,7 +67,7 @@ const navItems = [
   }
 ]
 
-export default () => {
+const Header = () => {
   const [isOpen, setOpen] = useState(false)
   const [isHome, setHome] = useState(true)
 
@@ -210,3 +210,5 @@ export default () => {
     </Navbar>
   )
 }
+
+export default Header

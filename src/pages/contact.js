@@ -39,7 +39,7 @@ const Error = ({ touched, message }) => {
   return null
 }
 
-export default () => {
+const Contact = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [submitError, setSubmitError] = useState(false)
 
@@ -251,3 +251,5 @@ export default () => {
     </Layout>
   )
 }
+
+export default Contact

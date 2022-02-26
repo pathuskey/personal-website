@@ -1,7 +1,9 @@
 import React from "react"
 
-export default () => {
+const Footer = () => {
   return (
-    <footer className="text-center px-5 py-3">© 2020 Patrick Huskey</footer>
+    <footer className="text-center px-5 py-3">© 2022 Patrick Huskey</footer>
   )
 }
+
+export default Footer

@@ -2,7 +2,7 @@ import React from "react"
 
 import "./spinner.scss"
 
-export default () => {
+const Spinner = () => {
   return (
     <div className="spinner">
       <div className="spinner__dot"></div>
@@ -14,3 +14,5 @@ export default () => {
     </div>
   )
 }
+
+export default Spinner

@@ -9,7 +9,8 @@ module.exports = {
   plugins: [
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sass",
-    "gatsby-plugin-sitemap",
+    "gatsby-plugin-image",
+    "gatsby-plugin-sitemap",    
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
