@@ -37,6 +37,6 @@ main {
 
 .gatsby-image-wrapper {
   [data-main-image] {
-    transform: none;
+    transform: none !important;
   }
 }
