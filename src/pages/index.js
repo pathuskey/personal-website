@@ -3,7 +3,7 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/Layout/Layout"
 import Bubbles from "../components/Graphics/Bubbles"
 import Waves from "../components/Graphics/Waves"
-import Img from "gatsby-image"
+import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
 import {
   Container,
   Row,
@@ -19,78 +19,78 @@ import { scroller } from "react-scroll"
 
 import "./index.scss"
 
-export default ({ data }) => {
+const Index = ({ data }) => {
   const introMessages = ["Husband", "Father", "Learner", "Engineer"]
   const projects = [
     {
       title: "publix.com",
       url: "https://www.publix.com",
-      image: data.publix.childImageSharp.fluid
+      image: data.publix
     },    
     {
       title: "tyson.com",
       url: "https://www.tyson.com",
-      image: data.tyson.childImageSharp.fluid
+      image: data.tyson
     },
     {
       title: "tysonfoodservice.com",
       url: "https://www.tysonfoodservice.com",
-      image: data.foodservice.childImageSharp.fluid
+      image: data.foodservice
     },
     {
       title: "aidells.com",
       url: "https://www.aidells.com",
-      image: data.aidells.childImageSharp.fluid
+      image: data.aidells
     },
     {
       title: "walmart.com",
       url: "https://www.walmart.com",
-      image: data.walmart.childImageSharp.fluid
+      image: data.walmart
     },
     {
       title: "jimmydean.com",
       url: "https://www.jimmydean.com",
-      image: data.jimmydean.childImageSharp.fluid
+      image: data.jimmydean
     },
     {
       title: "hillshiresnacking.com",
       url: "https://www.hillshiresnacking.com",
-      image: data.hssnacking.childImageSharp.fluid
+      image: data.hssnacking
     },
     {
       title: "hillshirefarm.com",
       url: "https://www.hillshirefarm.com",
-      image: data.hsfarm.childImageSharp.fluid
+      image: data.hsfarm
     },
     {
       title: "tysonfoods.com",
       url: "https://www.tysonfoods.com",
-      image: data.corporate.childImageSharp.fluid
+      image: data.corporate
     },
     {
       title: "nudgesdogtreats.com",
       url: "https://www.nudgesdogtreats.com",
-      image: data.nudges.childImageSharp.fluid
+      image: data.nudges
     },
     {
       title: "truechews.com",
       url: "https://www.truechews.com",
-      image: data.truechews.childImageSharp.fluid
+      image: data.truechews
     },
     {
       title: "wrightbrand.com",
       url: "https://www.wrightbrand.com",
-      image: data.wrightbrand.childImageSharp.fluid
+      image: data.wrightbrand
     },
     {
       title: "corndogs.com",
       url: "https://www.corndogs.com",
-      image: data.statefair.childImageSharp.fluid
+      image: data.statefair
     },
     {
       title: "tortillaland.com",
       url: "https://www.tortillaland.com",
-      image: data.tortillaland.childImageSharp.fluid
+      image: data.tortillaland
     }
   ]
 
@@ -155,10 +155,12 @@ export default ({ data }) => {
       </div>
       <div className="content position-relative">
         <section id="bio">
-          <Img
-            fluid={data.family.childImageSharp.fluid}
+          <StaticImage 
+            src="../img/family.jpg"
             alt="Family"
-            style={{ objectFit: "contain" }}
+            quality={90}
+            width={1600}
+            loading="eager"
           />
 
           <button
@@ -206,9 +208,11 @@ export default ({ data }) => {
                 </p>
               </Col>
               <Col className="text-center">
-                <Img
-                  fixed={data.monitor.childImageSharp.fixed}
+                <StaticImage 
+                  src="../img/monitor.png"
                   alt="Computer monitor"
+                  width={300}
+                  layout="fixed"
                 />
               </Col>
             </Row>
@@ -222,31 +226,35 @@ export default ({ data }) => {
               <p>A preview of my contributions and projects...</p>
 
               <CardColumns className="portfolio-cards">
-                {projects.map((project, i) => (
-                  <Card
-                    key={i}
-                    className="portfolio-cards__card shadow-sm rounded border-0"
-                  >
-                    <CardImg
-                      tag={Img}
-                      top
-                      width="100%"
-                      fluid={project.image}
-                      alt={project.title}
-                    />
-                    <CardFooter>
-                      <a
-                        className="stretched-link"
-                        href={project.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        title={project.title}
-                      >
-                        {project.title}
-                      </a>
-                    </CardFooter>
-                  </Card>
-                ))}
+                {projects.map((project, i) => {
+                  const image = getImage(project.image)
+
+                  return (
+                    <Card
+                      key={i}
+                      className="portfolio-cards__card shadow-sm rounded border-0"
+                    >
+                      <CardImg
+                        tag={GatsbyImage}
+                        top
+                        width="100%"
+                        image={image}
+                        alt={project.title}
+                      />
+                      <CardFooter>
+                        <a
+                          className="stretched-link"
+                          href={project.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title={project.title}
+                        >
+                          {project.title}
+                        </a>
+                      </CardFooter>
+                    </Card>
+                  )
+                  })}
               </CardColumns>
             </div>
 
@@ -264,16 +272,19 @@ export default ({ data }) => {
                   .replace(",", ".")
                   .replace("CSharp", "C#")
 
+                const image = getImage(skill.node)
+
                 return (
                   <span
                     key={i}
                     className="skills__skill d-flex align-items-center m-2"
                   >
-                    <Img
-                      fixed={skill.node.childImageSharp.fixed}
+                    <GatsbyImage
+                      image={image}
                       alt={name}
                       className="mr-1"
                     />
+
                     {name}
                   </span>
                 )
@@ -288,32 +299,20 @@ export default ({ data }) => {
   )
 }
 
+export default Index
+
 export const GridImage = graphql`
   fragment PortfolioImage on File {
     childImageSharp {
-      fluid(maxWidth: 400) {
-        ...GatsbyImageSharpFluid_withWebp
-      }
+      gatsbyImageData(
+        width: 400
+      )
     }
   }
 `
 
 export const pageQuery = graphql`
   query {
-    family: file(relativePath: { eq: "family.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1600, quality: 90) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-    monitor: file(relativePath: { eq: "monitor.png" }) {
-      childImageSharp {
-        fixed(width: 300) {
-          ...GatsbyImageSharpFixed_noBase64
-        }
-      }
-    }
     tyson: file(relativePath: { eq: "portfolio/Tyson.jpg" }) {
       ...PortfolioImage
     }
@@ -363,9 +362,9 @@ export const pageQuery = graphql`
       edges {
         node {
           childImageSharp {
-            fixed(height: 24) {
-              ...GatsbyImageSharpFixed_noBase64
-            }
+            gatsbyImageData(
+              height: 24
+            )
           }
           name
         }

@@ -2,7 +2,7 @@ import React from "react"
 
 import "./bubbles.scss"
 
-export default () => {
+const Bubbles = () => {
   return (
     <svg
       width="454"
@@ -220,3 +220,5 @@ export default () => {
     </svg>
   )
 }
+
+export default Bubbles
